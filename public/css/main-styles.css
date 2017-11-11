@@ -4,3 +4,29 @@ body {
 #messageArea {
   display: none;
 }
+
+.chat {
+  background-color: #F6F6EB;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+.message-form-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 130px;
+  background-color: white;
+}
+#messageForm {
+  padding-top: 15px;
+  width: 100%;
+}
+
+#message {
+  width: 50%;
+}
+
+.message {
+  margin: 15px;
+}

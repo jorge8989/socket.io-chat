@@ -8,6 +8,7 @@ $(function() {
   var $userFormArea = $("#userFormArea");
   var $users = $("#users");
   var $username = $("#username");
+  var $sendMsgBtn = $('#send-msg-btn');
 
   $messageForm.submit((e) => {
     e.preventDefault();
@@ -15,8 +16,13 @@ $(function() {
     $message.val('');
   });
 
+  $message.keyup((e) => {
+    $sendMsgBtn.prop('disabled', $message.val().trim().length == 0);
+  });
+
   socket.on('new message', (data) => {
-    $chat.append('<div class=well><strong>' + data.user + ':</strong> ' + data.msg + '</div>');
+    $chat.append('<div class="message"><strong>' + data.user + ':</strong> ' + data.msg + '</div>');
+    $($chat).scrollTop($chat[0].scrollHeight);
   });
 
   socket.on('get users', (data) => {

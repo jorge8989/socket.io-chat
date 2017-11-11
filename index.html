@@ -15,7 +15,7 @@
           <form id="userForm">
             <div class="form-group">
               <label>Enter user name</label>
-              <textarea class="form-control" id="username"></textarea>
+              <input type="text" class="form-control" id="username"/>
               <br />
               <input type="submit" class="btn btn-primary" value="Login" />
             </div>
@@ -23,24 +23,27 @@
         </div>
       </div>
       <div id="messageArea" class="row">
-        <div class="col-md-4">
-          <div class="well">
+        <div class="col-xs-4 col-md-3">
+          <div>
             <h3>users</h3>
             <ul class="list-group" id="users">
 
             </ul>
           </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-xs-8 col-md-9">
           <div class="chat" id="chat"></div>
+          <div class="message-form-container">
             <form id="messageForm">
               <div class="form-group">
-                <label>Message</label>
-                <textarea class="form-control" id="message"></textarea>
+                <input type="text" class="form-control" id="message"
+                  autocomplete="off" required="true"/>
                 <br />
-                <input type="submit" class="btn btn-primary" value="Send Message" />
+                <input id="send-msg-btn" type="submit" class="btn btn-primary" value="Send Message" disabled="true"/>
               </div>
             </form>
+          </div>
+
         </div>
       </div>
     </div>
